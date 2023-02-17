@@ -128,16 +128,10 @@ public class shapeCollectorTestSuite {
             shapeCollector.addFigure(shape2);
             shapeCollector.addFigure(shape3);
             //When
-            String showShape1 = shapeCollector.showFigures(shape1);
-            String showShape2 = shapeCollector.showFigures(shape2);
-            String showShape3 = shapeCollector.showFigures(shape3);
-            String result1 = "Shape name: " + "Square" + " field: " + 64.0;
-            String result2 = "Shape name: " + "Circle" + " field: " + (Math.PI * Math.pow(5, 2));
-            String result3 = "Shape name: " + "Triangle" + " field: " + 6.0;
+            String showShape = shapeCollector.showFigures();
+            String result = "Shape name: Square field: 64.0" + ", Shape name: Circle field: " + Math.PI * Math.pow(5, 2) + ", Shape name: Triangle field: 6.0, ";
             //Then
-            Assertions.assertEquals(showShape1, result1);
-            Assertions.assertEquals(showShape2, result2);
-            Assertions.assertEquals(showShape3, result3);
+            Assertions.assertEquals(showShape, result);
         }
     }
 }

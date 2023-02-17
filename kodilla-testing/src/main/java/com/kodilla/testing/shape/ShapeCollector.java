@@ -24,7 +24,11 @@ public class ShapeCollector {
             return null;
         }
     }
-    public String showFigures(Shape shape) {
-        return "Shape name: " + shape.getShapeName() + " field: " + shape.getField();
+    public String showFigures() {
+        String showFigures = "";
+        for (Shape show: shapeCollector){
+            showFigures += "Shape name: " + show.getShapeName() + " field: " + show.getField() + ", ";
+        }
+        return showFigures;
     }
 }
