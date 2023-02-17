@@ -2,7 +2,7 @@ package com.kodilla.testing.shape;
 
 import org.junit.jupiter.api.*;
 
-public class ShapeCollectorTestSuite {
+public class shapeCollectorTestSuite {
     @Nested
     @DisplayName("Tests for adding figures")
     class TestAdding {

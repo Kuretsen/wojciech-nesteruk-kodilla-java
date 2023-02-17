@@ -1,12 +1,10 @@
 package com.kodilla.testing.shape;
 
-import java.util.Objects;
-
 public class Triangle implements Shape{
     private final static String name = "Triangle";
-    private double edgeLengthA;
-    private double edgeLengthB;
-    private double edgeLengthC;
+    private final double edgeLengthA;
+    private final double edgeLengthB;
+    private final double edgeLengthC;
 
     public Triangle(double edgeLengthA, double edgeLengthB, double edgeLengthC) {
         this.edgeLengthA = edgeLengthA;
@@ -47,7 +45,6 @@ public class Triangle implements Shape{
     @Override
     public double getField() {
         double p = (edgeLengthA+edgeLengthB+edgeLengthC)/2;
-        double s = Math.sqrt(p*(p-edgeLengthA)*(p-edgeLengthB)*(p-edgeLengthC));
-        return s;
+        return Math.sqrt(p*(p-edgeLengthA)*(p-edgeLengthB)*(p-edgeLengthC));
     }
 }

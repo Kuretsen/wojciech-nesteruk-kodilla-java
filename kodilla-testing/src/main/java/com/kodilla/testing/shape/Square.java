@@ -1,11 +1,9 @@
 package com.kodilla.testing.shape;
 
-import java.util.Objects;
-
 public class Square implements Shape {
 
     private final static String name = "Square";
-    private double edgeLength;
+    private final double edgeLength;
 
     public Square(double edgeLength) {
         this.edgeLength = edgeLength;
