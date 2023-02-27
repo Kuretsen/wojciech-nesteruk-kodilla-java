@@ -27,10 +27,7 @@ public class Game {
     }
     public void computerTurn() {
         Random random = new Random(3);
-        computerMove = 0;
-        while (computerMove <= 0) {
-            computerMove = random.nextInt(3)+1;
-        }
+        computerMove = random.nextInt(3) + 1;
         if (computerMove == 1) {
             computerAttribute = "Kamień";
         } else if (computerMove == 2) {
