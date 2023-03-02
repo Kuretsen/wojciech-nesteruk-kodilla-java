@@ -16,20 +16,14 @@ public class RpsRunner {
         System.out.println("Podaj do ilu wygranych rund ma toczyć się gra.");
         int quantityOfRounds = scanner.nextInt();
 
-        System.out.println("Do gry będzie wykorzystywana klawiatura. \n" +
-                "Do zagrania kamienia wpisz: 1. \n" +
-                "Do zagrania papieru wpisz: 2. \n" +
-                "Do zagrania nożyc wpisz: 3. \n" +
-                "Jeśli chcesz zakończyć grę wpisz: x \n" +
-                "Jeśli chcesz zacząć grę od nowa wpisz: n");
+        System.out.println("Do gry będzie wykorzystywana klawiatura. \n" + "Do zagrania kamienia wpisz: 1. \n" + "Do zagrania papieru wpisz: 2. \n" + "Do zagrania nożyc wpisz: 3. \n" + "Jeśli chcesz zakończyć grę wpisz: x \n" + "Jeśli chcesz zacząć grę od nowa wpisz: n");
 
         while (!end) {
             game.playerTurn();
             String playerMove = game.getPlayerAttribute();
             game.computerTurn();
             String computerMove = game.getComputerAttribute();
-            System.out.println("Twój ruch to: " + playerMove +
-                    ". \n Ruch komputera to: " + computerMove);
+            System.out.println("Twój ruch to: " + playerMove + ". \n Ruch komputera to: " + computerMove);
             String result = game.gameRules();
             System.out.println(result);
 
