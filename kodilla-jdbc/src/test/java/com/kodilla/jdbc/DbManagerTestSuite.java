@@ -39,6 +39,7 @@ public class DbManagerTestSuite {
             rs.getString("LASTNAME"));
             counter ++;
         }
+
         rs.close();
         statement.close();
         assertEquals(5, counter);
