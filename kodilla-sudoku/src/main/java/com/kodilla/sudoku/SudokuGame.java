@@ -25,8 +25,8 @@ public class SudokuGame {
                 if (entry.toUpperCase().equals("SUDOKU")) {
                     initValuesFinished = true;
                 } else {
-                    int row = Integer.valueOf(entry.substring(0, 1)) - 1;
-                    int col = Integer.valueOf(entry.substring(1, 2)) - 1;
+                    int row = Integer.valueOf(entry.substring(0, 1));
+                    int col = Integer.valueOf(entry.substring(1, 2));
                     int value = Integer.valueOf(entry.substring(2, 3));
                     ArrayList<Integer> allowedNumbers = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9));
                     if (allowedNumbers.contains(row+1) && allowedNumbers.contains(col+1) && allowedNumbers.contains(value)) {
