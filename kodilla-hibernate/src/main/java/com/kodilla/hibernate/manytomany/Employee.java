@@ -1,31 +1,34 @@
 package com.kodilla.hibernate.manytomany;
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@NamedQuery(
-        name = "Employee.retrieveEmployeeWithLastname",
-        query = "FROM Employee WHERE lastName = :LASTNAME"
-)
+@NamedQueries({
+        @NamedQuery(
+                name = "Employee.retrieveAllSmith",
+                query = "FROM Employee WHERE lastname = 'Smith'"
+        ),
+        @NamedQuery(
+                name = "Employee.retrieveFromPartOfLastName",
+                query = "FROM Employee WHERE lastname like '%' || :LASTNAME || '%'"
+        )
+})
 @Entity
 @Table(name = "EMPLOYEES")
 public class Employee {
     private int id;
-    private String firstName;
-    private String lastName;
+    private String firstname;
+    private String lastname;
     private List<Company> companies = new ArrayList<>();
-
     public Employee() {
     }
-
-    public Employee(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public Employee(String firstname, String lastname) {
+        this.firstname = firstname;
+        this.lastname = lastname;
     }
-
     @Id
     @GeneratedValue
     @NotNull
@@ -33,19 +36,16 @@ public class Employee {
     public int getId() {
         return id;
     }
-
     @NotNull
     @Column(name = "FIRSTNAME")
-    public String getFirstName() {
-        return firstName;
+    public String getFirstname() {
+        return firstname;
     }
-
     @NotNull
     @Column(name = "LASTNAME")
-    public String getLastName() {
-        return lastName;
+    public String getLastname() {
+        return lastname;
     }
-
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "JOIN_COMPANY_EMPLOYEE",
@@ -55,20 +55,16 @@ public class Employee {
     public List<Company> getCompanies() {
         return companies;
     }
-
     public void setId(int id) {
         this.id = id;
     }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    private void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    private void setLastname(String lastname) {
+        this.lastname = lastname;
     }
-
-    public void setCompanies(List<Company> companies) {
+    private void setCompanies(List<Company> companies) {
         this.companies = companies;
     }
 }

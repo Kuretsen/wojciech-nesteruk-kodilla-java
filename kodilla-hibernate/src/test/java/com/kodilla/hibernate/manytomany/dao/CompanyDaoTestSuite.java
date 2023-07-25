@@ -97,8 +97,8 @@ public class CompanyDaoTestSuite {
         int greyMatterId = greyMatter.getId();
 
         //When
-        List<Employee> lastName = employeeDao.retrieveEmployeeWithLastname("Smith");
-        List<Company> nameStartedWith = companyDao.retrieveCompanyNameLike("Sof");
+        List<Employee> lastName = employeeDao.retrieveAllSmith();
+        List<Company> nameStartedWith = companyDao.retrieveCompaniesByName("Sof");
 
         //Then
         assertEquals(2, lastName.size());
