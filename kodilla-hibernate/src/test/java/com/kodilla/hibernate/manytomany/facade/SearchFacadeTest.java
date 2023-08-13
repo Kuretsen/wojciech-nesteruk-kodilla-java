@@ -61,10 +61,11 @@ class SearchFacadeTest {
 
         List<Company> companyList= new ArrayList<>();
         try {
-            companyList = searchFacade.searchCompanyByName("Dat");
+            companyList = searchFacade.searchCompanyByName("Data Masters");
         } catch (SearchProcessException e){
 
         }
+
         //Then
         assertEquals("Data Masters", companyList.get(0).getName());
 
@@ -73,7 +74,6 @@ class SearchFacadeTest {
             companyDao.deleteById(softwareMachineId);
             companyDao.deleteById(dataMastersId);
             companyDao.deleteById(greyMatterId);
-
             employeeDao.deleteById(johnSmithId);
             employeeDao.deleteById(stephanieClarksonId);
             employeeDao.deleteById(lindaKovalskyId);

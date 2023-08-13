@@ -21,7 +21,7 @@ public class SearchFacade {
 
     public List<Employee> searchEmployeeByLastName(String lastname) throws SearchProcessException {
         List<Employee> employeeList = employeeDao.retrieveFromPartOfLastName(lastname);
-        if (employeeList.size() == 0){
+        if (employeeList.isEmpty()){
             LOGGER.error("Employee not found");
             throw new SearchProcessException("No matching employees");
         }else {
@@ -32,7 +32,7 @@ public class SearchFacade {
 
     public List<Company> searchCompanyByName(String companyName) throws SearchProcessException{
         List<Company> companyList = companyDao.retrieveCompaniesByName(companyName);
-        if (companyList.size() == 0) {
+        if (companyList.isEmpty()) {
             LOGGER.error("Company not found");
             throw new SearchProcessException("Mp maching companies");
         } else {
@@ -40,5 +40,4 @@ public class SearchFacade {
             return companyList;
         }
     }
-
 }
