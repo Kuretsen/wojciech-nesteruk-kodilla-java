@@ -29,7 +29,7 @@ class SearchFacadeTest {
         Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
 
         Company softwareMachine = new Company("Software Machine");
-        Company dataMaesters = new Company("Data Maesters");
+        Company dataMaesters = new Company("Data Masters");
         Company greyMatter = new Company("Grey Matter");
 
         softwareMachine.getEmployees().add(johnSmith);
@@ -62,7 +62,7 @@ class SearchFacadeTest {
         List<Company> companyList= new ArrayList<>();
         try {
             companyList = searchFacade.searchCompanyByName("Data Masters");
-        } catch (SearchProcessException e){
+        } catch (SearchProcessException e) {
 
         }
 
